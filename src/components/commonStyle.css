@@ -1,0 +1,21 @@
+.mainbox{
+    text-align: center;
+}
+.activeBtn{
+   border:2px solid black;
+   text-align: center;
+}
+.nonActive{
+    text-align: center;
+}
+.tabs{
+    display:flex;
+    justify-content: center;
+}
+.tabs h1{
+    width:120px;
+}
+.mainBox button{
+    height:4opx;
+    width:100px;
+}
