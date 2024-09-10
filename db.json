@@ -1,0 +1,10 @@
+{
+    "todos": [
+        {
+            "id":1,
+            "name":"Learn JavaScript",
+            "description":"Learn JavaScript from scratch",
+            "priority":true
+        }
+    ]
+}

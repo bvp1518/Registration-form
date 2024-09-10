@@ -1,9 +1,12 @@
+// ================================================================
+import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function FormValue() {
     const [signin, setSignin] = useState(true);
+    const [isWrongPassword, setIsWrongPassword] = useState(" ")
     const navigation = useNavigate();
 
     const handleSignup = (e) => {
@@ -44,6 +47,9 @@ function FormValue() {
             }
         }
 
+// =========================================
+
+
         const userData = JSON.parse(localStorage.getItem('user'));
 
 
@@ -62,9 +68,11 @@ function FormValue() {
             navigation("/home")
 
         } else {
-              alert("Something went wrong...Please try again");
+                setIsWrongPassword("Please enter valid Password.")
+              
            }
-    }
+
+           }
     
         const handleSubmit = (e) => {
             e.preventDefault();
@@ -86,7 +94,7 @@ function FormValue() {
                     <form onSubmit={handleSubmit}>
                         {!signin && <div data-mdb-input-init className="form-outline mb-4">
                             <label className="form-label" forhtml="form2Example2">Name</label>
-                            <input type="name" name="name" id="form2Example2" className="form-control" />
+                            {/* <input type="name" name="name" id="form2Example2" className="form-control" /> */}
                         </div>}
 
                         <div data-mdb-input-init className="form-outline mb-4">
@@ -96,7 +104,8 @@ function FormValue() {
 
                         <div data-mdb-input-init className="form-outline mb-4">
                             <label className="form-label" forhtml="form2Example2">Password</label>
-                            <input type="password" name="password" id="form2Example2" className="form-control" />
+                            <input type="password" name="password" id="password" className="form-control" />
+                            <span>{isWrongPassword}</span>
                         </div>
 
                         <div className="row mb-4">
@@ -124,3 +133,6 @@ function FormValue() {
         );
     }
 export default FormValue;
+
+
+
